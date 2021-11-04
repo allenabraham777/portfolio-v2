@@ -1,0 +1,15 @@
+@mixin w-50 {
+  width: 50%;
+}
+
+@mixin w-100 {
+  width: 100%;
+}
+
+@mixin f--w {
+  max-width: 100vw;
+}
+
+@mixin f--h {
+  height: 100vh;
+}

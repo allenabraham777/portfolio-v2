@@ -1,0 +1,8 @@
+@import "utils/variables";
+@import "utils/mixins";
+
+.page.dark {
+  background-color: $dark;
+  color: $light;
+  
+}

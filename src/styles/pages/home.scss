@@ -1,0 +1,28 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.page {
+  .home {
+    @include flex;
+    @include flex-wrap--wrap;
+    @include plr--md;
+
+    @media screen and (min-width: $md-screen) {
+      @include f--h;
+      @include jc--center;
+      @include ac--center;
+
+      .home-heading {
+        @include w-100;
+        font-size: 60px;
+        font-weight: bold;
+      }
+      .home-sub-heading {
+        @include w-50;
+      }
+      .home-image {
+        @include w-50;
+      }
+    }
+  }
+}
