@@ -4,6 +4,8 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sass',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
      'gatsby-remark-relative-images',
      {
       resolve: `gatsby-source-filesystem`,

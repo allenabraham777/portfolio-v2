@@ -5,7 +5,7 @@
   .home {
     @include flex;
     @include flex-wrap--wrap;
-    @include plr--md;
+    @include plr--lg;
 
     @media screen and (min-width: $md-screen) {
       @include f--h;

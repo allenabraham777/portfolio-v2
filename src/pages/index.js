@@ -13,6 +13,7 @@ const Home = () => {
           <h1>Hey There,</h1>
           <h2>Welcome to my space</h2>
           <h3>I'm just a regular dude who loves coding</h3>
+          <a>Download Resume</a>
         </div>
         <div className="home-image">
           <HomeImage/>
