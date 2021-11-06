@@ -1,5 +1,6 @@
 @import "../utils/variables";
 @import "../utils/mixins";
+@import "../utils/animations";
 
 .page {
   .home {
@@ -13,15 +14,62 @@
       @include ac--center;
 
       .home-heading {
-        @include w-100;
-        font-size: 60px;
-        font-weight: bold;
-      }
-      .home-sub-heading {
         @include w-50;
+
+        &-main {
+          font-size: 68px;
+          font-weight: bold;
+          letter-spacing: 12px;
+        }
+        
+        &-one {
+          font-size: 24px;
+          margin: 0;
+          margin-top: 32px;
+          padding: 0;
+        }
+        
+        &-two {
+          font-size: 36px;
+          margin: 0;
+          padding: 0;
+          margin-top: 12px;
+        }
+
+        &-three {
+          font-size: 18px;
+          margin: 0;
+          padding: 0;
+          margin-top: 24px;
+          margin-bottom: 40px;
+        }
+
+        &-button {
+          position: absolute;
+          text-decoration: none;
+          cursor: pointer;
+          font-size: 24px;
+          border: solid;
+          border-width: 3.2px;
+          padding: 8px 16px;
+          border-radius: 32px;
+          @include bounce;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+
+          .download {
+            font-size: 16px;
+          }
+
+        }
+
       }
       .home-image {
         @include w-50;
+        margin: auto 0;
+        @include bounce;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
       }
     }
   }

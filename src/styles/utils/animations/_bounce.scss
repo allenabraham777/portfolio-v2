@@ -1,0 +1,11 @@
+@mixin bounce {
+  animation-name: bounce-animation;
+  animation-timing-function: linear;
+
+  @keyframes bounce-animation {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(-2%); }
+    75%  { transform: translateY(2%); }
+    100% { transform: translateY(0); }
+  }
+}
