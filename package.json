@@ -34,7 +34,6 @@
     "gatsby-plugin-sass": "^5.1.0",
     "gatsby-plugin-sharp": "^4.1.0",
     "gatsby-plugin-sitemap": "^5.1.0",
-    "gatsby-remark-figure-caption": "^2.0.0",
     "gatsby-remark-images": "^6.1.0",
     "gatsby-remark-prismjs": "^6.1.0",
     "gatsby-remark-relative-images": "^2.0.2",
