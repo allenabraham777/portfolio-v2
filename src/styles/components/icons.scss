@@ -1,0 +1,32 @@
+@import "../utils/variables";
+
+.icon {
+  width: 16px;
+  height: 16px;
+
+  margin: 0 2px;
+
+  &.hide {
+    opacity: 0;
+  }
+
+  &.sun {
+    stroke: #ffff00;
+    fill: #ffff00;
+  }
+
+  &.moon {
+    stroke: $light;
+  }
+
+  &.menu {
+    &.dark {
+      stroke: $light;
+    }
+    &.light {
+      stroke: $dark;
+    }
+    width: 23px;
+    height: 23px;
+  }
+}

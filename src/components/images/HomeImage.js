@@ -7,7 +7,7 @@ const HomeImage = () => {
   query Image {
     image: file(relativePath: {eq: "title.png"}) {
       childImageSharp {
-        fluid(maxWidth: 400) {
+        fluid {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

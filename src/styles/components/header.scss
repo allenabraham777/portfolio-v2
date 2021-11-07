@@ -2,12 +2,21 @@
 
 .header {
   position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
   top: 0;
   width: 100%;
   @include flex;
   padding: 8px 32px;
 
   .nav {
-    
+    display: flex;
+
+    &-button {
+      background-color: transparent;
+      border: none;
+      margin-left: 12px;
+      cursor: pointer;
+    }
   }
 }

@@ -4,10 +4,13 @@
 @import 'pages/styles.scss';
 @import 'components/styles.scss';
 
+* {
+  box-sizing: border-box;
+}
+
 html, body{
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif;
 
   .fullpage {
