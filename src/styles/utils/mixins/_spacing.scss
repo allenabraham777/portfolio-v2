@@ -4,6 +4,11 @@
 }
 
 @mixin plr--lg {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+@mixin plr--xl {
   padding-left: 20%;
   padding-right: 20%;
 }

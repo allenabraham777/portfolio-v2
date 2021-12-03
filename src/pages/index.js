@@ -16,6 +16,7 @@ const Home = () => {
         <div className="home-image">
           <HomeImage/>
         </div>
+        <div className="construction">* Website under construction</div>
       </div>
     </Layout>
   )

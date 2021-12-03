@@ -8,7 +8,7 @@ const HomeImage = () => {
     image: file(relativePath: {eq: "title.png"}) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

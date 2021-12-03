@@ -1,14 +1,20 @@
 @import "../utils/variables";
 @import "../utils/mixins";
-@import "../utils/animations";
 
 .page {
   .home {
     @include flex;
     @include flex-wrap--wrap;
-    @include plr--lg;
+
+    .construction {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: xx-small;
+    }
 
     @media screen and (min-width: $md-screen) {
+      @include plr--md;
       @include f--h;
       @include jc--center;
       @include ac--center;
@@ -45,7 +51,6 @@
         }
 
         &-button {
-          position: absolute;
           text-decoration: none;
           cursor: pointer;
           font-size: 24px;
@@ -53,9 +58,6 @@
           border-width: 3.2px;
           padding: 8px 16px;
           border-radius: 32px;
-          @include bounce;
-          animation-duration: 2s;
-          animation-iteration-count: infinite;
 
           .download {
             font-size: 16px;
@@ -67,9 +69,87 @@
       .home-image {
         @include w-50;
         margin: auto 0;
-        @include bounce;
-        animation-duration: 4s;
-        animation-iteration-count: infinite;
+      }
+    }
+
+    @media screen and (max-width: $md-screen) {
+      @include plr--md;
+      @include f--h;
+      @include jc--center;
+      @include ac--center;
+
+      .home-heading {
+        @include w-100;
+        order: 2;
+
+        &-main {
+          font-size: 50px;
+          font-weight: bold;
+          letter-spacing: 12px;
+          text-align: center;
+        }
+        
+        &-one {
+          font-size: 24px;
+          margin: 0;
+          margin-top: 32px;
+          padding: 0;
+          text-align: center;
+        }
+        
+        &-two {
+          font-size: 36px;
+          margin: 0;
+          padding: 0;
+          margin-top: 12px;
+          text-align: center;
+        }
+
+        &-three {
+          font-size: 18px;
+          margin: 0;
+          padding: 0;
+          margin-top: 24px;
+          margin-bottom: 40px;
+          text-align: center;
+        }
+
+        &-button {
+          text-decoration: none;
+          cursor: pointer;
+          font-size: 24px;
+          width: 264px;
+          border: solid;
+          border-width: 3.2px;
+          padding: 8px 16px;
+          border-radius: 32px;
+          margin: 0 auto;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+
+          .download {
+            font-size: 16px;
+          }
+
+        }
+
+      }
+      .home-image {
+        @include w-100;
+        order: 1;
+        margin: auto 0;
+
+        .gatsby-image-wrapper {
+          width: 100% !important;
+        }
+
+        img {
+          width: 80% !important;
+          height: auto !important;
+          left: 50% !important;
+          transform: translateX(-50%);
+        }
       }
     }
   }
