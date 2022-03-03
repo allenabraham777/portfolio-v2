@@ -1,19 +1,34 @@
 import React from "react";
-import ThemeToggle from "./ThemeToggle";
-import Menu from "./icons/Menu";
+import { Link } from "gatsby";
+import { routeLists } from "../constants/pages";
+import "../styles/components/header.scss";
+import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { themes } from "../constants/themes";
 
-const Header = ({ theme, setTheme, themes }) => {
+const Header = ({theme, setTheme}) => {
   return (
-    <div className="header">
-      <div className="nav">
-        <span className="nav-button">
-          <ThemeToggle theme={theme} setTheme={setTheme} themes={themes} />
-        </span>
-        {/* <span className="nav-button">
-          <Menu className={`icon menu ${theme === themes.DARK ? 'dark' : 'light'}`} />
-        </span> */}
-      </div>
-    </div>
+    <nav className="navbar">
+      <span className="navbar__name">ALLEN K ABRAHAM</span>
+      <ul className="navbar__links">
+        {routeLists.map((page) => (
+          <li>
+            <Link to={`${page.path}`}>{page.name}</Link>
+          </li>
+        ))}
+        <li>
+          <div className="theme">
+            <div className="theme__container" style={{flexDirection: theme === themes.DARK ? 'column' : 'column-reverse' }}>
+              <span onClick={()=>setTheme(themes.DARK)}>
+                <BsFillMoonStarsFill/>
+              </span>
+              <span onClick={()=>setTheme(themes.LIGHT)}>
+                <BsFillSunFill />
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

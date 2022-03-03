@@ -1,22 +1,141 @@
-@import "../utils/mixins";
+@import "../utils/variables";
 
-.header {
+.navbar {
   position: fixed;
-  display: flex;
-  flex-direction: row-reverse;
   top: 0;
-  width: 100%;
-  @include flex;
-  padding: 8px 32px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
-  .nav {
+  height: 6rem;
+  padding: 1rem 1rem;
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 50%;
+  }
+
+  &__links {
     display: flex;
+    list-style: none;
 
-    &-button {
-      background-color: transparent;
-      border: none;
-      margin-left: 12px;
-      cursor: pointer;
+    li {
+      margin: auto 1rem;
+      max-height: 40px;
+
+      a {
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+
+    }
+
+    @media screen and (max-width: $md-screen) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+    
+    @media screen and (max-width: $md-screen) {
+      display: flex;
+      list-style: none;
+  
+      li {
+        margin: auto 1rem;
+        max-height: 40px;
+  
+        a {
+          text-decoration: none;
+          font-size: 1.5rem;
+        }
+  
+      }
+    }
+  }
+  
+  .theme {
+    height: 40px;
+    width: 40px;
+    border: solid 2px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      height: 80px;
+    }
+    
+    &__container {
+      display: flex;
+
+      span {
+        width: 36px !important;
+        height: 36px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  backdrop-filter: blur(2px);
+}
+
+.dark {
+  .navbar {
+    &__name {
+      color: $dark-primary-color;
+    }
+
+    &__links {
+  
+      li {
+
+        a {
+          color: $white;
+
+          &:hover {
+            color: $dark-secondary-color;
+          }
+        }
+
+      }
+    }
+    .theme {
+      border-color: $white;
+    }
+  }
+}
+
+.light {
+  .navbar {
+    &__name {
+      color: $light-primary-color;
+    }
+
+    &__links {
+  
+      li {
+
+        a {
+          color: $black;
+          
+          &:hover {
+            color: $light-secondary-color;
+          }
+        }
+
+      }
+    }
+    .theme {
+      border-color: $black;
     }
   }
 }

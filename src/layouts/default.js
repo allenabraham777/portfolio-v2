@@ -1,34 +1,32 @@
-import React, { useEffect, useState } from "react"
-import Header from "../components/Header"
-import "../styles/style.scss"
+import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
+import "../styles/layouts/default.scss";
+import { themes } from "../constants/themes";
 
-const themes = {
-  LIGHT: 'LIGHT',
-  DARK: 'DARK'
-}
+const Layout = ({ fullHeight, noHeader, children }) => {
+  const [theme, setTheme] = useState(themes.LIGHT);
 
-
-const Layout = ({children, noHeader, isFullpage}) => {
-  const [theme, setTheme] = useState(themes.LIGHT)
-  
-  useEffect(()=>{
-    const theme = localStorage.getItem('theme');
-    if(theme) {
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
       setTheme(theme);
     }
-  },[]);
+  }, []);
 
   const updateTheme = (theme) => {
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
     setTheme(theme);
-  }
-
+  };
   return (
-    <div className={`page ${theme === themes.DARK ? 'dark' : 'light'} ${!!isFullpage ? 'fullpage' : ''}`}>
-      {!noHeader && <Header theme={theme} setTheme={updateTheme} themes={themes}/>}
+    <div
+      className={`layout ${fullHeight ? "full-height" : ""} ${
+        theme === themes.DARK ? "dark" : "light"
+      }`}
+    >
+      {!noHeader && <Header theme={theme} setTheme={updateTheme} />}
       {children}
     </div>
-  )
-}
+  );
+};
 
 export default Layout;
