@@ -7,9 +7,13 @@ const Layout = ({ fullHeight, noHeader, children }) => {
   const [theme, setTheme] = useState(themes.LIGHT);
 
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      setTheme(theme);
+    const theme =
+      localStorage.getItem("theme") ||
+      window.matchMedia("(prefers-color-scheme: dark)");
+    if (theme === themes.DARK || theme.matches) {
+      setTheme(themes.DARK);
+    } else {
+      setTheme(themes.LIGHT);
     }
   }, []);
 
