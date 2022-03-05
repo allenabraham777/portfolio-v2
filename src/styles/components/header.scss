@@ -9,9 +9,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 
   height: 6rem;
-  padding: 1rem 1rem;
+  padding: 1rem 12.5%;
+  @media screen and (max-width: $md-screen) {
+    padding: 1rem;
+  }
 
   &__name {
     font-size: 2rem;
@@ -31,7 +35,6 @@
         text-decoration: none;
         font-size: 1.5rem;
       }
-
     }
 
     @media screen and (max-width: $md-screen) {
@@ -39,26 +42,62 @@
     }
   }
 
+  &__button {
+    display: none;
+    @media screen and (max-width: $md-screen) {
+      display: block;
+      
+      svg {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+
   &__menu {
     display: none;
-    
+
     @media screen and (max-width: $md-screen) {
-      display: flex;
+      flex-direction: column;
       list-style: none;
-  
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+      height: 100vh;
+      width: 0;
+      display: none;
+      z-index: 100;
+
+      &.expand {
+        display: flex;
+        width: 100%;
+      }
+      justify-content: center;
+      align-items: center;
+
+      svg.close {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        width: 40px;
+        height: 40px;
+      }
+
       li {
-        margin: auto 1rem;
+        margin: 1rem auto;
         max-height: 40px;
-  
+
         a {
           text-decoration: none;
           font-size: 1.5rem;
         }
-  
       }
     }
   }
-  
+
   .theme {
     height: 40px;
     width: 40px;
@@ -71,7 +110,7 @@
     &:hover {
       height: 80px;
     }
-    
+
     &__container {
       display: flex;
 
@@ -94,10 +133,14 @@
       color: $dark-primary-color;
     }
 
-    &__links {
-  
-      li {
+    &__button{
+      svg {
+        color: $dark-primary-color;
+      }
+    }
 
+    &__links {
+      li {
         a {
           color: $white;
 
@@ -105,9 +148,23 @@
             color: $dark-secondary-color;
           }
         }
-
       }
     }
+
+    &__menu {
+      background-color: $dark;
+
+      li {
+        a {
+          color: $white;
+
+          &:hover {
+            color: $dark-secondary-color;
+          }
+        }
+      }
+    }
+
     .theme {
       border-color: $white;
     }
@@ -120,13 +177,32 @@
       color: $light-primary-color;
     }
 
+    &__button{
+      svg {
+        color: $light-primary-color;
+      }
+    }
+
     &__links {
+      li {
+        a {
+          color: $black;
+
+          &:hover {
+            color: $light-secondary-color;
+          }
+        }
+      }
+    }
+
+    &__menu {
+      background-color: $light;
   
       li {
 
         a {
           color: $black;
-          
+
           &:hover {
             color: $light-secondary-color;
           }
@@ -134,6 +210,7 @@
 
       }
     }
+
     .theme {
       border-color: $black;
     }

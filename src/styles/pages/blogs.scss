@@ -1,0 +1,41 @@
+@import "../utils/variables";
+
+.blogs {
+  margin: 0 auto;
+  margin-top: 8rem;
+  width: 75%;
+
+  @media screen and (max-width: $md-screen) {
+    width: 95%;
+  }
+
+  &__heading {
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    @media screen and (max-width: $md-screen) {
+      justify-content: space-around;
+    }
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+
+.dark {
+  .blogs {
+    &__heading {
+      color: $dark-primary-color;
+    }
+  }
+}
+
+.light {
+  .blogs {
+    &__heading {
+      color: $light-primary-color;
+    }
+  }
+}

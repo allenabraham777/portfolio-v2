@@ -1,0 +1,85 @@
+@import "../../utils/variables";
+
+.blogcard {
+  width: 100%;
+  max-width: 300px;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 2rem;
+
+  &__details {
+    padding: 1.2rem;
+    &-title {
+      text-align: justify;
+      font-size: 24px;
+      margin: 0.8rem auto;
+    }
+
+    &-description {
+      text-align: justify;
+      font-size: 16px;
+      margin-top: 1rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    div {
+      padding: 0 0.5rem;
+      border-right: solid 1px;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.dark {
+  .blogcard {
+    background-color: $dark;
+    border: solid 1px $light;
+    color: $white;
+
+    &__details {
+      &-title {
+        color: $dark-primary-color
+      }
+      &-description {
+        color: $dark-secondary-color
+      }
+    }
+
+    &__footer {
+      color: #b3b1b1;
+    }
+  }
+}
+
+.light {
+  .blogcard {
+    background-color: $light;
+    border: solid 1px $dark;
+    color: $black;
+
+    &__details {
+      &-title {
+        color: $light-primary-color
+      }
+      &-description {
+        color: $light-secondary-color
+      }
+    }
+
+    &__footer {
+      color: #4c4b4b;
+    }
+  }
+}

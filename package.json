@@ -34,10 +34,11 @@
     "gatsby-plugin-sass": "^5.1.0",
     "gatsby-plugin-sharp": "^4.1.0",
     "gatsby-plugin-sitemap": "^5.1.0",
-    "gatsby-remark-images": "^6.1.0",
+    "gatsby-remark-figure-caption": "^2.0.0",
+    "gatsby-remark-images": "^6.9.0",
     "gatsby-remark-prismjs": "^6.1.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-filesystem": "^4.1.0",
+    "gatsby-source-filesystem": "^4.9.0",
     "gatsby-transformer-remark": "^5.1.0",
     "gatsby-transformer-sharp": "^4.1.0",
     "node-sass": "^6.0.1",
@@ -47,6 +48,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.3.1",
+    "react-utterances": "^0.6.4",
     "sass": "^1.43.4"
   }
 }

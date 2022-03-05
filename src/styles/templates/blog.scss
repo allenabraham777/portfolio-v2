@@ -1,0 +1,167 @@
+@import "../utils/variables";
+
+.blogpost {
+  width: 75%;
+  margin: auto;
+  margin-top: 160px;
+  margin-bottom: 80px;
+
+  &__title {
+    font-size: 2.4rem;
+  }
+
+  &__credits {
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+
+    &-image {
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+    &-details {
+      margin-left: 1rem;
+
+      display: flex;
+      flex-direction: column;
+
+      .author {
+        font-size: 24px;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+
+      .date {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__content {
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 28px 0 0 0;
+      width: 100%;
+    }
+    p {
+      text-align: justify;
+      margin: 16px 0 32px 0;
+      width: 100%;
+      font-size: 18px;
+    }
+    .gatsby-resp-image-figure {
+      .gatsby-resp-image-figcaption {
+        p {
+          text-align: center;
+        }
+      }
+    }
+
+    ul {
+      li {
+        margin: 16px 0;
+        text-align: justify;
+      }
+    }
+  }
+
+  &__comments {
+    width: 100%;
+    margin-top: 32px;
+    border-top: dashed #888888;
+    padding-top: 32px;
+
+    .react-utterences {
+      .utterances {
+        max-width: 100%;
+
+        .utterances-frame {
+          width: 100%;
+        }
+      }
+    }
+
+    .privacy {
+      font-size: 16px;
+      color: #888888;
+      text-align: center;
+    }
+  }
+}
+
+.dark {
+  .blogpost {
+    &__title {
+      color: $dark-primary-color;
+    }
+
+    &__credits {
+      color: $dark-secondary-color;
+    }
+
+    &__content {
+      a,
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: $dark-secondary-color;
+      }
+    }
+    &__comments {
+      h2 {
+        color: $dark-primary-color;
+      }
+
+      .privacy {
+        a {
+          color: $dark-secondary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .blogpost {
+    &__title {
+      color: $light-primary-color;
+    }
+
+    &__credits {
+      color: $light-secondary-color;
+    }
+
+    &__content {
+      a,
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: $light-secondary-color;
+      }
+    }
+    &__comments {
+      h2 {
+        color: $light-primary-color;
+      }
+
+      .privacy {
+        a {
+          color: $light-secondary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

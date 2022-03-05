@@ -7,10 +7,10 @@ const pages = {
     name: "Blogs",
     path: "/blogs/",
   },
-  projects: {
-    name: "Projects",
-    path: "/projects/",
-  },
+  // projects: {
+  //   name: "Projects",
+  //   path: "/projects/",
+  // },
 };
 
 export const routeLists = Object.values(pages);
